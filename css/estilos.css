@@ -15,6 +15,7 @@
 body {
   font-size: 20px;
   font-family: 'open sans', sans-serif;
+  background: var(--gray-light);
 }
 ::-moz-scrollbar{
   display: none;
@@ -37,17 +38,20 @@ p {
   margin: 0px;
   padding: 0px;
 }
-/*.linkwrap { position:relative; display:inline-block; }*/
-.video iframe {
+.video{
+  height: fit-content;
+  overflow: hidden;
   background-color: var(--purple-mediunm);
-  position:absolute;
-  height:100vh;
-  width:100%;
+}
+.video video{
+  background-color: var(--purple-mediunm);
+  /* position:absolute; */
   z-index:1;
+  overflow: hidden;
 }
 /*.linkwrap iframe { /*z-index: 2;}*/
 
-/*menu*/
+/**********************************************************************************menu*/
 .menu {
   background-color: var(--purple-mediunm);
   width: 100%;
@@ -78,15 +82,15 @@ p {
   transform: translateY(18px);
   background-color: var(--purple-light);
 }
-
+/* *********************************************************ABOUT */
 .nosotros {
   margin-bottom: 0px;
+  background: var(--white);
 }
 
 .subtitulo {
   font-size: 20px;
   color: var(--purple-dark);
-  font-family: 'Noto Serif', serif;
   font-weight: 700;
   z-index: 2;
   text-transform: uppercase;
@@ -94,8 +98,9 @@ p {
 }
 
 .subtitulo span {
-  background-color: var(--gray-light);
-  padding: 0 15px;
+  background-color: var(--purple-light);
+  color: var(--white);
+  padding: 10px 15px;
   z-index: 99;
   position: relative;
 }
@@ -134,15 +139,15 @@ p {
   border-bottom: 1px solid var(--purple-light);
 }
 
-/*marcas*/
+/*******************************************************************marcas*/
 .productos {
-  background: var(--gray-light);
+  background: var(--white);
   padding: 20px;
   margin-bottom: 60px;
   margin-top: 20px;
 }
 .mision {
-  background-image: url("../img/fondomision.jpg");
+  background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
   padding: 20px;
   margin-bottom: 60px;
   margin-top: 20px;
@@ -152,6 +157,12 @@ p {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+.mision p{
+  background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    color: var(--white);
+    width: 100%;
 }
 .productos .btn-productos {
 	background-color: var(--purple-light);
@@ -221,7 +232,7 @@ p {
   text-decoration: none;
 }
 
-/*Separador*/
+/*******************************************************************Separador*/
 .separador {
   width: 100%;
   background-image: url("../img/separador5.jpg");
@@ -239,17 +250,33 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  font-family: 'Noto Serif', serif;
   padding: 10px;
 }
 
 /* Acerca de */
+.svg-images{
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  align-items: flex-end;
+  justify-items: center;
+  margin-bottom: 10%;
+}
+.svg-images div{
+  text-align: center;
+}
+.svg-images div img{
+  margin-bottom: 10px;
+}
 .acerca-de {
 	margin-bottom: 60px;
 }
 .acerca-de img{
-  width: 75px;
-  height: 75px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--purple-mediunm);
 }
 
 /* Galeria */
@@ -266,28 +293,34 @@ p {
 .contacto {
 	margin-bottom: 30px;
 }
-.contacto img{
-  width: 40px;
-  height: 40px;
-  margin: 3px;
+
+.telefonos{
+  margin: 2em auto;
+  width:  fit-content;
+}
+.telefonos strong{
+  margin-right: 10px;
 }
 
-.redes-sociales {
-	padding: 10px;
-	background-color: var(--purple-light);
-}
 
-.redes-sociales img {
-	padding: 5px;
-	border-radius: 100%;
-	width: 50px;
-	transition: .3s ease all;
+/******************************************FOOTER  */
+footer{
+  background: var(--purple-mediunm);
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.redes-sociales img:hover {
-	transform: scale(1.2);
+footer .copyright p{
+  color: var(--white);
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
 }
-
+footer .redes i{
+  font-size: 40px
+}
 /* Mediaqueries */
 @media screen and (max-width: 992px) {
 	p {
@@ -327,7 +360,6 @@ form{
   margin-bottom: 20px;
   color: var(--white);
   font-size: 40px;
-  font-family: 'Noto Serif', serif;
   font-style: italic;
 }
 .imgSesion{
