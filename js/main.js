@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
 	});
 */
 	// Eventlistener del overlay
-	overlay.addEventListener('click', (evento) => {
+/* 	overlay.addEventListener('click', (evento) => {
 		evento.target.id === 'overlay' ? overlay.classList.remove('activo') : '';
-	});
+	}); */
 });
